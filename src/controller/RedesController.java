@@ -88,9 +88,9 @@ public class RedesController {
 				BufferedReader reader = new BufferedReader(leitor);
 				String linha = reader.readLine();
 				while (linha != null) {
-					if (linha.contains("Avarage")) {
+					if (linha.contains("dia")) {
 						String[] separa = linha.split(" ");
-						System.out.println("Média: " + separa[12] + "ms.");
+						System.out.println("Média: " + separa[12]);
 					}
 					linha = reader.readLine();
 				}
