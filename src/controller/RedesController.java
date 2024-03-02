@@ -25,7 +25,7 @@ public class RedesController {
 					if (linha.contains("mtu")) {
 						System.out.println(linha);
 					}
-					if (linha.contains("intet")) {
+					if (linha.contains("inet")) {
 						String[] separa = linha.split(" ");
 						System.out.println("IPv4: " + separa[1]);
 					}
@@ -70,7 +70,10 @@ public class RedesController {
 				BufferedReader reader = new BufferedReader(leitor);
 				String linha = reader.readLine();
 				while (linha != null) {
-					System.out.println(linha);
+					if (linha.contains("rtt")) {
+						String[] separa = linha.split("/");
+						System.out.println("Média: " + separa[4] + "ms.");
+					}
 					linha = reader.readLine();
 				}
 			} catch (IOException e) {
@@ -87,6 +90,7 @@ public class RedesController {
 				while (linha != null) {
 					if (linha.contains("Avarage")) {
 						String[] separa = linha.split(" ");
+						System.out.println("Média: " + separa[12] + "ms.");
 					}
 					linha = reader.readLine();
 				}
